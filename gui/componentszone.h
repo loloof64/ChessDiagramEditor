@@ -11,7 +11,7 @@
 #include <QListWidget>
 #include <QPushButton>
 #include <QList>
-#include "chessboard/chessboard.h"
+#include "position_editor/positioneditorwidget.h"
 #include "../libs/chessx-pgn/database/pgndatabase.h"
 
 namespace loloof64 {
@@ -26,7 +26,7 @@ namespace loloof64 {
 
     private:
         QHBoxLayout *_mainLayout;
-        ChessBoard *_chessBoard;
+        PositionEditorWidget *_positionEditor;
     };
 }
 

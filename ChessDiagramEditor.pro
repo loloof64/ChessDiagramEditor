@@ -17,10 +17,11 @@ DEFINES += USE_C11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    gui/chessboard/chessboard.cpp \
-    gui/chessboard/promotiondialog.cpp \
+    core/positionbuilder.cpp \
     gui/componentszone.cpp \
     gui/mainwindow.cpp \
+    gui/position_editor/positioneditor.cpp \
+    gui/position_editor/positioneditorwidget.cpp \
     libs/chessx-pgn/database/analysis.cpp \
     libs/chessx-pgn/database/arenabook.cpp \
     libs/chessx-pgn/database/bitboard.cpp \
@@ -86,11 +87,11 @@ SOURCES += \
     libs/FlowLayout/flowlayout.cpp
 
 HEADERS += \
-    gui/chessboard/IPosition.h \
-    gui/chessboard/chessboard.h \
-    gui/chessboard/promotiondialog.h \
+    core/positionbuilder.h \
     gui/componentszone.h \
     gui/mainwindow.h \
+    gui/position_editor/positioneditor.h \
+    gui/position_editor/positioneditorwidget.h \
     libs/chessx-pgn/database/abk.h \
     libs/chessx-pgn/database/analysis.h \
     libs/chessx-pgn/database/arenabook.h \

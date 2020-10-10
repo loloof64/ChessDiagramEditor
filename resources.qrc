@@ -15,6 +15,7 @@
     </qresource>
     <qresource prefix="/icons">
         <file>resources/icons/chess.png</file>
+        <file alias="trashCan.svg">resources/icons/recycle-bin.svg</file>
     </qresource>
     <qresource prefix="/fonts">
         <file alias="FreeSerif.ttf">resources/fonts/FreeSerif.ttf</file>

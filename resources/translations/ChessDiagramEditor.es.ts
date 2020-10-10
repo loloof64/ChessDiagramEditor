@@ -931,49 +931,98 @@ b%2
     </message>
 </context>
 <context>
+    <name>PositionEditorWidget</name>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="86"/>
+        <source>Current selection</source>
+        <translation>Selección actual</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="96"/>
+        <source>Turn</source>
+        <translation>Giro</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="99"/>
+        <source>White</source>
+        <translation>Blanco</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="100"/>
+        <source>Black</source>
+        <translation>Negro</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="105"/>
+        <source>Erase board</source>
+        <translation>Limpia el tablero de ajedrez</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="106"/>
+        <source>Standard position</source>
+        <translation>Posición estándar</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="113"/>
+        <source>FEN</source>
+        <translation>FEN</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="118"/>
+        <source>Copy FEN</source>
+        <translation>Copiar FEN</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="119"/>
+        <source>Paste FEN</source>
+        <translation>Pegar FEN</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="146"/>
+        <source>General</source>
+        <comment>General options of position editor</comment>
+        <translation>General</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="147"/>
+        <source>FEN</source>
+        <comment>Fen options of position editor</comment>
+        <translation>FEN</translation>
+    </message>
+</context>
+<context>
     <name>loloof64::ChessBoard</name>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="584"/>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="588"/>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="592"/>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="596"/>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="600"/>
         <source>Game finished</source>
         <comment>Game finished modal title</comment>
-        <translation>Juego terminado</translation>
+        <translation type="vanished">Juego terminado</translation>
     </message>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="584"/>
         <source>Checkmate</source>
-        <translation>Mate</translation>
+        <translation type="vanished">Mate</translation>
     </message>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="588"/>
         <source>Stalemate</source>
-        <translation>Estancamiento</translation>
+        <translation type="vanished">Estancamiento</translation>
     </message>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="592"/>
         <source>Draw by 3-folds repetition</source>
-        <translation>Igualdad por repetición de 3 pliegues</translation>
+        <translation type="vanished">Igualdad por repetición de 3 pliegues</translation>
     </message>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="596"/>
         <source>Draw by insuficient material</source>
-        <translation>Igualdad por material insuficiente</translation>
+        <translation type="vanished">Igualdad por material insuficiente</translation>
     </message>
     <message>
-        <location filename="../../gui/chessboard/chessboard.cpp" line="600"/>
         <source>Draw by the 50 moves rule</source>
-        <translation>Igualdad por la regla de los 50 movimientos</translation>
+        <translation type="vanished">Igualdad por la regla de los 50 movimientos</translation>
     </message>
 </context>
 <context>
     <name>loloof64::PromotionDialog</name>
     <message>
-        <location filename="../../gui/chessboard/promotiondialog.cpp" line="57"/>
         <source>Select the promotion piece</source>
-        <translation>Elige la pieza de promoción</translation>
+        <translation type="vanished">Elige la pieza de promoción</translation>
     </message>
 </context>
 </TS>

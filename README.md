@@ -3,7 +3,7 @@
 Easily create your chess diagrams as JPEG images.
 
 
-## Developers
+## Developers   
 
 This project has been made with QtCreator and Qt 5.15.
 
@@ -20,4 +20,5 @@ Don't forget to generate translations files, from resources/translations subfold
 
 Using some icon resources from [FlatIcon](https://www.flaticon.com/).
 
+* recycle-bin svg by FreePik
 * chess png by Flat Icons (application icon)
