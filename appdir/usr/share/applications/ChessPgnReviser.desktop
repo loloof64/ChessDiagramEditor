@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Chess Diagram Editor
+Comment=Easily create your chess diagrams as JPEG images.
+Exec=ChessDiagramEditor
+Icon=chess
+Categories=Game;
