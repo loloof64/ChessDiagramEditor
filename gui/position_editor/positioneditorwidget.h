@@ -28,6 +28,7 @@ signals:
 
 private:
     QVBoxLayout * _mainLayout;
+    QPushButton *_saveAsImageButton;
     QWidget * _mainEditorZone;
     QHBoxLayout * _mainEditorZoneLayout;
     QVBoxLayout * _piecesButtonsLayout;

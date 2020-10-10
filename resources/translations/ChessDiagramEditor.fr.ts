@@ -41,12 +41,12 @@ b%2
     <message>
         <location filename="../../libs/chessx-pgn/database/bitboard.cpp" line="3088"/>
         <source>White</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Blancs</translation>
     </message>
     <message>
         <location filename="../../libs/chessx-pgn/database/bitboard.cpp" line="3088"/>
         <source>Black</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Noirs</translation>
     </message>
 </context>
 <context>
@@ -146,7 +146,7 @@ b%2
     <message>
         <location filename="../../libs/chessx-pgn/database/filtermodel.cpp" line="54"/>
         <source>White</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Blancs</translation>
     </message>
     <message>
         <location filename="../../libs/chessx-pgn/database/filtermodel.cpp" line="55"/>
@@ -156,7 +156,7 @@ b%2
     <message>
         <location filename="../../libs/chessx-pgn/database/filtermodel.cpp" line="56"/>
         <source>Black</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Noirs</translation>
     </message>
     <message>
         <location filename="../../libs/chessx-pgn/database/filtermodel.cpp" line="57"/>
@@ -933,58 +933,63 @@ b%2
 <context>
     <name>PositionEditorWidget</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="86"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="15"/>
+        <source>Save as image</source>
+        <translation>Sauvegarder en image</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="88"/>
         <source>Current selection</source>
         <translation>Sélection courante</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="96"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="98"/>
         <source>Turn</source>
         <translation>Tour</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="99"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="101"/>
         <source>White</source>
         <translation>Blancs</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="100"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="102"/>
         <source>Black</source>
         <translation>Noirs</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="105"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="107"/>
         <source>Erase board</source>
         <translation>Effacer l&apos;échiquier</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="106"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="108"/>
         <source>Standard position</source>
         <translation>Position standard</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="113"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="115"/>
         <source>FEN</source>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="118"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="120"/>
         <source>Copy FEN</source>
         <translation>Copier FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="119"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="121"/>
         <source>Paste FEN</source>
         <translation>Coller FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="146"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="150"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="147"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="151"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
@@ -1016,6 +1021,29 @@ b%2
     <message>
         <source>Draw by the 50 moves rule</source>
         <translation type="vanished">Nulle par la règle des 50 coups</translation>
+    </message>
+</context>
+<context>
+    <name>loloof64::PositionEditor</name>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="167"/>
+        <source>Image size</source>
+        <translation>Taille de l&apos;image</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="168"/>
+        <source>Wished image width/height size in pixels ?</source>
+        <translation>Hauteur/largeur en pixels désirée ?</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="187"/>
+        <source>Choose the destination image</source>
+        <translation>Choisissez l&apos;image de destination</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="189"/>
+        <source>JPEG image (*.jpg *.jpeg)</source>
+        <translation>Image JPEG (*.jpg *.jpeg)</translation>
     </message>
 </context>
 <context>

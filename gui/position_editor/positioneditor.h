@@ -17,6 +17,7 @@ namespace loloof64 {
 
         void setFromFen(QString positionValue);
         void setCurrentEditingPiece(char pieceFen);
+        void letUserSaveToJPG();
 
     signals:
         void cellSelected(int file, int rank);
@@ -24,7 +25,9 @@ namespace loloof64 {
     private:
         int _cellsSize;
         loloof64::ThcPosition _position;
+        QString _fileDialogPath;
 
+        void corePaint(QPainter &painter, int wholeSizePx) const;
         void paintEvent(QPaintEvent *event) override;
         void mousePressEvent(QMouseEvent *event) override;
     };

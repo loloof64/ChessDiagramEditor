@@ -12,6 +12,8 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _mainLayout = new QVBoxLayout(this);
     _mainLayout->setSpacing(10);
 
+    _saveAsImageButton = new QPushButton(tr("Save as image"));
+
     _mainEditorZone = new QWidget();
 
     _mainEditorZoneLayout = new QHBoxLayout();
@@ -119,6 +121,8 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _pasteFenButton = new QPushButton(tr("Paste FEN"));
 
     _positionBuilder = new loloof64::PositionBuilder();
+
+    _mainLayout->addWidget(_saveAsImageButton);
 
     _fenButtonsLine->addWidget(_copyFenButton);
     _fenButtonsLine->addWidget(_pasteFenButton);
@@ -232,6 +236,7 @@ PositionEditorWidget::~PositionEditorWidget() {
     delete _piecesButtonsLayout;
     delete _mainEditorZoneLayout;
     delete _mainEditorZone;
+    delete _saveAsImageButton;
     delete _mainLayout;
 }
 
@@ -246,6 +251,9 @@ void PositionEditorWidget::synchronizeWithBuilder() {
 
 void PositionEditorWidget::connectComponents()
 {
+    connect(_saveAsImageButton, &QPushButton::clicked, [this]() {
+        _editorComponent->letUserSaveToJPG();
+    });
     connect(_editorComponent, &loloof64::PositionEditor::cellSelected, [this](int file, int rank) {
         _positionBuilder->setPieceAtSquare(_editingValue, loloof64::BoardSquare(file, rank));
         synchronizeWithBuilder();
