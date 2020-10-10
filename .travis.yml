@@ -11,13 +11,13 @@ install:
 - sudo apt-get -y install qt510base qt510svg qt510translations qt510tools libgl1-mesa-dev libgtk2.0-dev git
 - source /opt/qt*/bin/qt*-env.sh
 script:
-- lupdate ChessPgnReviser.pro
-- lrelease ChessPgnReviser.pro
+- lupdate ChessDiagramEditor.pro
+- lrelease ChessDiagramEditor.pro
 - qmake CONFIG+=release PREFIX=/usr
 - make -j$(nproc)
 - make INSTALL_ROOT=appdir -j$(nproc) install ; find appdir/
-- cp appdir/opt/ChessPgnReviser/bin/ChessPgnReviser appdir/usr/bin
-- cp /home/travis/build/loloof64/ChessPgnReviser/resources/translations/*.qm appdir/usr/translations
+- cp appdir/opt/ChessDiagramEditor/bin/ChessDiagramEditor appdir/usr/bin
+- cp /home/travis/build/loloof64/ChessDiagramEditor/resources/translations/*.qm appdir/usr/translations
 - git clone http://code.qt.io/qt/qtstyleplugins.git
 - cd qtstyleplugins
 - qmake
@@ -31,10 +31,10 @@ script:
 - "./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop
   -appimage -verbose=1"
 after_success:
-- mv Chess_Pgn_Reviser*.AppImage ChessPgnReviser-Linux-x86_64.AppImage
-- chmod a+x ChessPgnReviser-Linux-x86_64.AppImage
+- mv Chess_Pgn_Reviser*.AppImage ChessDiagramEditor-Linux-x86_64.AppImage
+- chmod a+x ChessDiagramEditor-Linux-x86_64.AppImage
 - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-- bash upload.sh ChessPgnReviser-Linux-x86_64.AppImage
+- bash upload.sh ChessDiagramEditor-Linux-x86_64.AppImage
 
 before_deploy:
   - git tag $TRAVIS_TAG
@@ -42,7 +42,7 @@ before_deploy:
 deploy:
   provider: releases
   github_token: $GITHUB_TOKEN
-  file: ChessPgnReviser-Linux-x86_64.AppImage
+  file: ChessDiagramEditor-Linux-x86_64.AppImage
   on:
     tags: true
   skip_cleanup: true
