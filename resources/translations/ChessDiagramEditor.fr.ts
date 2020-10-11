@@ -938,58 +938,63 @@ b%2
         <translation>Sauvegarder en image</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="88"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="18"/>
+        <source>Add simple arrow</source>
+        <translation>Ajouter une flèche simple</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="91"/>
         <source>Current selection</source>
         <translation>Sélection courante</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="98"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="101"/>
         <source>Turn</source>
         <translation>Tour</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="101"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="104"/>
         <source>White</source>
         <translation>Blancs</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="102"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="105"/>
         <source>Black</source>
         <translation>Noirs</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="107"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="110"/>
         <source>Erase board</source>
         <translation>Effacer l&apos;échiquier</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="108"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="111"/>
         <source>Standard position</source>
         <translation>Position standard</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="115"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="118"/>
         <source>FEN</source>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="120"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="123"/>
         <source>Copy FEN</source>
         <translation>Copier FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="121"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="124"/>
         <source>Paste FEN</source>
         <translation>Coller FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="150"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="158"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="151"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="159"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
@@ -1024,24 +1029,58 @@ b%2
     </message>
 </context>
 <context>
+    <name>loloof64::NewHintArrowDialog</name>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="10"/>
+        <source>Start file</source>
+        <translation>Colonne de départ</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="17"/>
+        <source>Start rank</source>
+        <translation>Rangée de départ</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="26"/>
+        <source>End file</source>
+        <translation>Colonne de fin</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="33"/>
+        <source>End rank</source>
+        <translation>Rangée de fin</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="41"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="64"/>
+        <source>Select the color</source>
+        <translation>Choisssez la couleur</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="106"/>
+        <source>Set the arrow values</source>
+        <translation>Définir les valeurs de la flèche</translation>
+    </message>
+</context>
+<context>
     <name>loloof64::PositionEditor</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="167"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="183"/>
         <source>Image size</source>
         <translation>Taille de l&apos;image</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="168"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="184"/>
         <source>Wished image width/height size in pixels ?</source>
         <translation>Hauteur/largeur en pixels désirée ?</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="187"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="203"/>
         <source>Choose the destination image</source>
         <translation>Choisissez l&apos;image de destination</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="189"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="205"/>
         <source>JPEG image (*.jpg *.jpeg)</source>
         <translation>Image JPEG (*.jpg *.jpeg)</translation>
     </message>

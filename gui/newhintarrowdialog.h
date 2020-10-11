@@ -5,7 +5,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QSpinBox>
+#include <QComboBox>
 #include <QDialogButtonBox>
 #include <QIntValidator>
 #include <QPushButton>
@@ -24,20 +24,22 @@ signals:
     void newSimpleHintArrowRequested(Cell startcell, Cell endCell, QColor color);
 
 private:
+    int _startFileIndex, _startRankIndex;
+    int _endFileIndex, _endRankIndex;
     QColor _selectedColor;
     QVBoxLayout* _mainLayout;
 
     QHBoxLayout* _startCellLayout;
     QLabel* _startCellFileLabel;
-    QSpinBox* _startCellFileLineEdit;
+    QComboBox* _startCellFileCombo;
     QLabel* _startCellRankLabel;
-    QSpinBox* _startCellRankLineEdit;
+    QComboBox* _startCellRankCombo;
 
     QHBoxLayout* _endCellLayout;
     QLabel* _endCellFileLabel;
-    QSpinBox* _endCellFileLineEdit;
+    QComboBox* _endCellFileCombo;
     QLabel* _endCellRankLabel;
-    QSpinBox* _endCellRankLineEdit;
+    QComboBox* _endCellRankCombo;
 
     QPushButton* _selectColorButton;
 

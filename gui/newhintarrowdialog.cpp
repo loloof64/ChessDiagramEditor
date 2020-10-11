@@ -1,41 +1,58 @@
 #include "newhintarrowdialog.h"
 #include<QColorDialog>
 
-loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(parent, Qt::WindowTitleHint | Qt::CustomizeWindowHint)
+loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(parent, Qt::WindowTitleHint | Qt::CustomizeWindowHint),
+    _startFileIndex(0), _startRankIndex(0), _endFileIndex(0), _endRankIndex(0)
 {
     _selectedColor = QColor(Qt::black);
     _mainLayout = new QVBoxLayout(this);
 
     _startCellLayout = new QHBoxLayout();
     _startCellFileLabel = new QLabel(tr("Start file"));
-    _startCellFileLineEdit = new QSpinBox();
-    _startCellFileLineEdit->setRange(0, 7);
+    _startCellFileCombo = new QComboBox();
+    for (auto i = 0; i <= 7; i++) {
+        _startCellFileCombo->addItem(QString::asprintf("%c", 'a' + i));
+    }
+    _startCellFileCombo->setEditable(false);
+    _startCellFileCombo->setCurrentIndex(_startFileIndex);
     _startCellRankLabel = new QLabel(tr("Start rank"));
-    _startCellRankLineEdit = new QSpinBox();
-    _startCellRankLineEdit->setRange(0, 7);
+    _startCellRankCombo = new QComboBox();
+    for (auto i = 0; i <= 7; i++) {
+        _startCellRankCombo->addItem(QString::number(i+1));
+    }
+    _startCellRankCombo->setEditable(false);
+    _startCellRankCombo->setCurrentIndex(_startRankIndex);
 
     _endCellLayout = new QHBoxLayout();
     _endCellFileLabel = new QLabel(tr("End file"));
-    _endCellFileLineEdit = new QSpinBox();
-    _endCellFileLineEdit->setRange(0, 7);
-    _endCellRankLabel = new QLabel("End rank");
-    _endCellRankLineEdit = new QSpinBox();
-    _endCellRankLineEdit->setRange(0, 7);
+    _endCellFileCombo = new QComboBox();
+    for (auto i = 0; i <= 7; i++) {
+        _endCellFileCombo->addItem(QString::asprintf("%c", 'a' + i));
+    }
+    _endCellFileCombo->setEditable(false);
+    _endCellFileCombo->setCurrentIndex(_endFileIndex);
+    _endCellRankLabel = new QLabel(tr("End rank"));
+    _endCellRankCombo = new QComboBox();
+    for (auto i = 0; i <= 7; i++) {
+        _endCellRankCombo->addItem(QString::number(i+1));
+    }
+    _endCellRankCombo->setEditable(false);
+    _endCellRankCombo->setCurrentIndex(_endRankIndex);
 
     _selectColorButton = new QPushButton(tr("Select the color"));
 
     _startCellLayout->addWidget(_startCellFileLabel);
-    _startCellLayout->addWidget(_startCellFileLineEdit);
+    _startCellLayout->addWidget(_startCellFileCombo);
     _startCellLayout->addStretch();
     _startCellLayout->addWidget(_startCellRankLabel);
-    _startCellLayout->addWidget(_startCellRankLineEdit);
+    _startCellLayout->addWidget(_startCellRankCombo);
     _mainLayout->addLayout(_startCellLayout);
 
     _endCellLayout->addWidget(_endCellFileLabel);
-    _endCellLayout->addWidget(_endCellFileLineEdit);
+    _endCellLayout->addWidget(_endCellFileCombo);
     _endCellLayout->addStretch();
     _endCellLayout->addWidget(_endCellRankLabel);
-    _endCellLayout->addWidget(_endCellRankLineEdit);
+    _endCellLayout->addWidget(_endCellRankCombo);
     _mainLayout->addLayout(_endCellLayout);
 
     _mainLayout->addWidget(_selectColorButton);
@@ -52,11 +69,27 @@ loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(pare
         }
     });
 
+    connect(_startCellFileCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [this](int newIndex) {
+       _startFileIndex = newIndex;
+    });
+
+    connect(_startCellRankCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [this](int newIndex) {
+       _startRankIndex = newIndex;
+    });
+
+    connect(_endCellFileCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [this](int newIndex) {
+       _endFileIndex = newIndex;
+    });
+
+    connect(_endCellFileCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), [this](int newIndex) {
+       _endFileIndex = newIndex;
+    });
+
     connect(_validationButtons, &QDialogButtonBox::accepted, [this]() {
-        auto startFile = _startCellFileLineEdit->value();
-        auto startRank = _startCellRankLineEdit->value();
-        auto endFile = _endCellFileLineEdit->value();
-        auto endRank = _endCellRankLineEdit->value();
+        auto startFile = _startCellFileCombo->currentIndex();
+        auto startRank = _startCellRankCombo->currentIndex();
+        auto endFile = _endCellFileCombo->currentIndex();
+        auto endRank = _endCellRankCombo->currentIndex();
         Cell startCell(startFile, startRank);
         Cell endCell(endFile, endRank);
         emit newSimpleHintArrowRequested(startCell, endCell, _selectedColor);
@@ -80,15 +113,15 @@ loloof64::NewHintArrowDialog::~NewHintArrowDialog() {
 
     delete _selectColorButton;
 
-    delete _endCellRankLineEdit;
+    delete _endCellRankCombo;
     delete _endCellRankLabel;
-    delete _endCellFileLineEdit;
+    delete _endCellFileCombo;
     delete _endCellFileLabel;
     delete _endCellLayout;
 
-    delete _startCellRankLineEdit;
+    delete _startCellRankCombo;
     delete _startCellRankLabel;
-    delete _startCellFileLineEdit;
+    delete _startCellFileCombo;
     delete _startCellFileLabel;
     delete _startCellLayout;
 

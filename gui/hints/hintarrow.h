@@ -13,7 +13,7 @@ struct Cell {
 class HintArrow
 {
 public:
-    HintArrow(Cell start, Cell end, QColor color = QColor(Qt::black));
+    HintArrow(Cell start, Cell end, QColor color);
     void paint(QPainter &painter, int cellsSize) const;
 
 private:
