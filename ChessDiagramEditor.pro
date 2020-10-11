@@ -20,6 +20,7 @@ SOURCES += \
     core/positionbuilder.cpp \
     gui/componentszone.cpp \
     gui/hints/hintarrow.cpp \
+    gui/hints/numberedhintarrow.cpp \
     gui/mainwindow.cpp \
     gui/newhintarrowdialog.cpp \
     gui/position_editor/positioneditor.cpp \
@@ -92,6 +93,7 @@ HEADERS += \
     core/positionbuilder.h \
     gui/componentszone.h \
     gui/hints/hintarrow.h \
+    gui/hints/numberedhintarrow.h \
     gui/mainwindow.h \
     gui/newhintarrowdialog.h \
     gui/position_editor/positioneditor.h \

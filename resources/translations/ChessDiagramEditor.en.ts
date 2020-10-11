@@ -933,68 +933,73 @@ b%2
 <context>
     <name>PositionEditorWidget</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="15"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="17"/>
         <source>Save as image</source>
         <translation>Save as image</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="18"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="20"/>
         <source>Add simple arrow</source>
         <translation>Add simple arrow</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="91"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="21"/>
+        <source>Add numbered arrow</source>
+        <translation>Add numbered arrow</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="94"/>
         <source>Current selection</source>
         <translation>Current selection</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="101"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="104"/>
         <source>Turn</source>
         <translation>Turn</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="104"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="107"/>
         <source>White</source>
         <translation>White</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="105"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="108"/>
         <source>Black</source>
         <translation>Black</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="110"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="113"/>
         <source>Erase board</source>
         <translation>Erase board</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="111"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="114"/>
         <source>Standard position</source>
         <translation>Standard position</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="118"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="121"/>
         <source>FEN</source>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="123"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="126"/>
         <source>Copy FEN</source>
         <translation>Copy FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="124"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="127"/>
         <source>Paste FEN</source>
         <translation>Paste FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="158"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="163"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="159"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="164"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
@@ -1031,33 +1036,38 @@ b%2
 <context>
     <name>loloof64::NewHintArrowDialog</name>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="10"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="11"/>
+        <source>Number</source>
+        <translation>Number</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="18"/>
         <source>Start file</source>
         <translation>Start file</translation>
     </message>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="17"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="25"/>
         <source>Start rank</source>
         <translation>Start rank</translation>
     </message>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="26"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="34"/>
         <source>End file</source>
         <translation>End file</translation>
     </message>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="33"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="41"/>
         <source>End rank</source>
         <translation>End rank</translation>
     </message>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="41"/>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="64"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="49"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="78"/>
         <source>Select the color</source>
         <translation>Select the color</translation>
     </message>
     <message>
-        <location filename="../../gui/newhintarrowdialog.cpp" line="106"/>
+        <location filename="../../gui/newhintarrowdialog.cpp" line="126"/>
         <source>Set the arrow values</source>
         <translation>Set the arrow values</translation>
     </message>

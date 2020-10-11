@@ -9,6 +9,7 @@
 #include <QDialogButtonBox>
 #include <QIntValidator>
 #include <QPushButton>
+#include <QLineEdit>
 
 #include "hints/hintarrow.h"
 
@@ -17,17 +18,24 @@ class NewHintArrowDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit NewHintArrowDialog(QWidget *parent = nullptr);
+    explicit NewHintArrowDialog(QWidget *parent = nullptr, bool withNumberEditor = false);
     ~NewHintArrowDialog();
 
 signals:
     void newSimpleHintArrowRequested(Cell startcell, Cell endCell, QColor color);
+    void newNumberedHintArrowRequested(Cell startCell, Cell endCell, QColor _selectedColor, int number);
 
 private:
+    bool _withNumberEditor;
     int _startFileIndex, _startRankIndex;
     int _endFileIndex, _endRankIndex;
     QColor _selectedColor;
     QVBoxLayout* _mainLayout;
+
+    QHBoxLayout* _numberEditorLayout;
+    QLabel* _numberEditorLabel;
+    QLineEdit* _numberEditorLineEdit;
+    QIntValidator* _numberValidator;
 
     QHBoxLayout* _startCellLayout;
     QLabel* _startCellFileLabel;

@@ -22,7 +22,9 @@ void loloof64::PositionEditor::paintEvent(QPaintEvent * /*event*/)
 
 loloof64::PositionEditor::~PositionEditor()
 {
-
+    for (auto *arrowDef : _hintArrows) {
+        delete arrowDef;
+    }
 }
 
 void loloof64::PositionEditor::setFromFen(QString positionValue)
@@ -123,7 +125,7 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
 
     // painting hint arrows
     for (auto arrow : _hintArrows) {
-        arrow.paint(painter, localCellsSize);
+        arrow->paint(painter, localCellsSize);
     }
 
     // painting coordinates
@@ -213,7 +215,7 @@ void loloof64::PositionEditor::letUserSaveToJPG() {
     }
 }
 
-void loloof64::PositionEditor::addHintArrow(HintArrow arrow) {
+void loloof64::PositionEditor::addHintArrow(HintArrow *arrow) {
     _hintArrows.append(arrow);
     repaint();
 }

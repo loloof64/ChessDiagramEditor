@@ -32,8 +32,9 @@ private:
     QVBoxLayout * _mainLayout;
     QPushButton *_saveAsImageButton;
 
-    QHBoxLayout *_arrowButtonsLine;
+    QHBoxLayout *_addArrowButtonsLine;
     QPushButton* _addNewSimpleArrow;
+    QPushButton *_addNewNumberedArrow;
 
     QWidget * _mainEditorZone;
     QHBoxLayout * _mainEditorZoneLayout;
@@ -82,6 +83,7 @@ private:
     loloof64::PositionBuilder * _positionBuilder;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
+    loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;
 
     char _editingValue = ' ';
 

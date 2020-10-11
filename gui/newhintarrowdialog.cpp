@@ -1,11 +1,18 @@
 #include "newhintarrowdialog.h"
 #include<QColorDialog>
 
-loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(parent, Qt::WindowTitleHint | Qt::CustomizeWindowHint),
-    _startFileIndex(0), _startRankIndex(0), _endFileIndex(0), _endRankIndex(0)
+loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent, bool withNumberEditor) : QDialog(parent, Qt::WindowTitleHint | Qt::CustomizeWindowHint),
+    _withNumberEditor(withNumberEditor), _startFileIndex(0), _startRankIndex(0), _endFileIndex(0), _endRankIndex(0)
 {
     _selectedColor = QColor(Qt::black);
     _mainLayout = new QVBoxLayout(this);
+
+    _numberEditorLayout = new QHBoxLayout();
+    _numberEditorLabel = new QLabel(tr("Number"));
+    _numberEditorLineEdit = new QLineEdit();
+    _numberValidator = new QIntValidator();
+    _numberValidator->setBottom(1);
+    _numberEditorLineEdit->setValidator(_numberValidator);
 
     _startCellLayout = new QHBoxLayout();
     _startCellFileLabel = new QLabel(tr("Start file"));
@@ -40,6 +47,12 @@ loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(pare
     _endCellRankCombo->setCurrentIndex(_endRankIndex);
 
     _selectColorButton = new QPushButton(tr("Select the color"));
+
+    _numberEditorLayout->addWidget(_numberEditorLabel);
+    _numberEditorLayout->addWidget(_numberEditorLineEdit);
+    if (_withNumberEditor) {
+        _mainLayout->addLayout(_numberEditorLayout);
+    }
 
     _startCellLayout->addWidget(_startCellFileLabel);
     _startCellLayout->addWidget(_startCellFileCombo);
@@ -92,7 +105,13 @@ loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent) : QDialog(pare
         auto endRank = _endCellRankCombo->currentIndex();
         Cell startCell(startFile, startRank);
         Cell endCell(endFile, endRank);
-        emit newSimpleHintArrowRequested(startCell, endCell, _selectedColor);
+        if (_withNumberEditor) {
+            auto number = _numberEditorLineEdit->text().toInt();
+            emit newNumberedHintArrowRequested(startCell, endCell, _selectedColor, number);
+        }
+        else {
+            emit newSimpleHintArrowRequested(startCell, endCell, _selectedColor);
+        }
         close();
     });
 
@@ -124,6 +143,11 @@ loloof64::NewHintArrowDialog::~NewHintArrowDialog() {
     delete _startCellFileCombo;
     delete _startCellFileLabel;
     delete _startCellLayout;
+
+    delete _numberValidator;
+    delete _numberEditorLineEdit;
+    delete _numberEditorLabel;
+    delete _numberEditorLayout;
 
     delete _mainLayout;
 }

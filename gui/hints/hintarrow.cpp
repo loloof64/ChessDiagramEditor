@@ -15,6 +15,10 @@ loloof64::HintArrow::HintArrow(Cell start, Cell end, QColor color):
 
 }
 
+loloof64::HintArrow::~HintArrow() {
+
+}
+
 void loloof64::HintArrow::paint(QPainter &painter, int cellsSize) const {
     drawArrowBetweenCells(painter, _color, _start, _end, cellsSize);
 }

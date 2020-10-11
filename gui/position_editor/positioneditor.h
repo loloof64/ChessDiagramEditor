@@ -21,7 +21,7 @@ namespace loloof64 {
         void setCurrentEditingPiece(char pieceFen);
         void letUserSaveToJPG();
 
-        void addHintArrow(HintArrow arrow);
+        void addHintArrow(HintArrow *arrow);
 
     signals:
         void cellSelected(int file, int rank);
@@ -30,7 +30,7 @@ namespace loloof64 {
         int _cellsSize;
         loloof64::ThcPosition _position;
         QString _fileDialogPath;
-        QVector<HintArrow> _hintArrows;
+        QVector<HintArrow *> _hintArrows;
 
         void corePaint(QPainter &painter, int wholeSizePx) const;
         void paintEvent(QPaintEvent *event) override;

@@ -1,4 +1,6 @@
 #include "positioneditorwidget.h"
+#include "../hints/hintarrow.h"
+#include "../hints/numberedhintarrow.h"
 #include "../../core/adapters/thcposition.h"
 
 #include <QHeaderView>
@@ -14,8 +16,9 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 
     _saveAsImageButton = new QPushButton(tr("Save as image"));
 
-    _arrowButtonsLine = new QHBoxLayout();
+    _addArrowButtonsLine = new QHBoxLayout();
     _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
+    _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
 
     _mainEditorZone = new QWidget();
 
@@ -126,11 +129,13 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _positionBuilder = new loloof64::PositionBuilder();
 
     _newSimpleHintArrowDialog = new loloof64::NewHintArrowDialog(this);
+    _newNumberedHintArrowDialog = new loloof64::NewHintArrowDialog(this, true);
 
     _mainLayout->addWidget(_saveAsImageButton);
 
-    _arrowButtonsLine->addWidget(_addNewSimpleArrow);
-    _mainLayout->addLayout(_arrowButtonsLine);
+    _addArrowButtonsLine->addWidget(_addNewSimpleArrow);
+    _addArrowButtonsLine->addWidget(_addNewNumberedArrow);
+    _mainLayout->addLayout(_addArrowButtonsLine);
 
     _fenButtonsLine->addWidget(_copyFenButton);
     _fenButtonsLine->addWidget(_pasteFenButton);
@@ -247,9 +252,9 @@ PositionEditorWidget::~PositionEditorWidget() {
     delete _mainEditorZoneLayout;
     delete _mainEditorZone;
 
-
+    delete _addNewNumberedArrow;
     delete _addNewSimpleArrow;
-    delete _arrowButtonsLine;
+    delete _addArrowButtonsLine;
 
     delete _saveAsImageButton;
     delete _mainLayout;
@@ -272,6 +277,10 @@ void PositionEditorWidget::connectComponents()
 
     connect(_addNewSimpleArrow, &QPushButton::clicked, [this]() {
         _newSimpleHintArrowDialog->exec();
+    });
+
+    connect(_addNewNumberedArrow, &QPushButton::clicked, [this]() {
+       _newNumberedHintArrowDialog->exec();
     });
 
     connect(_editorComponent, &loloof64::PositionEditor::cellSelected, [this](int file, int rank) {
@@ -371,8 +380,14 @@ void PositionEditorWidget::connectComponents()
 
     connect(_newSimpleHintArrowDialog, &loloof64::NewHintArrowDialog::newSimpleHintArrowRequested,
             [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color) {
-        loloof64::HintArrow arrowToAdd(startcell, endCell, color);
+        auto arrowToAdd = new loloof64::NumberedHintArrow(startcell, endCell, color);
         _editorComponent->addHintArrow(arrowToAdd);
+    });
+
+    connect(_newNumberedHintArrowDialog, &loloof64::NewHintArrowDialog::newNumberedHintArrowRequested,
+            [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color, int number) {
+       auto arrowToAdd = new loloof64::NumberedHintArrow(startcell, endCell, color, number);
+       _editorComponent->addHintArrow(arrowToAdd);
     });
 
     connect(_pasteFenButton, &QPushButton::clicked, [this]() {
