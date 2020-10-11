@@ -6,6 +6,7 @@
 
 namespace loloof64 {
 struct Cell {
+    Cell(){};
     Cell(int file, int rank);
     int file, rank;
 };
@@ -13,6 +14,7 @@ struct Cell {
 class HintArrow
 {
 public:
+    HintArrow(){};
     HintArrow(Cell start, Cell end, QColor color);
     void paint(QPainter &painter, int cellsSize) const;
 

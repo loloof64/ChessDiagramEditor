@@ -374,6 +374,21 @@ void PositionEditorWidget::connectComponents()
         loloof64::HintArrow arrowToAdd(startcell, endCell, color);
         _editorComponent->addHintArrow(arrowToAdd);
     });
+
+    connect(_pasteFenButton, &QPushButton::clicked, [this]() {
+            const QClipboard *clipboard = QApplication::clipboard();
+            try {
+                _positionBuilder->setFromFen(clipboard->text());
+                synchronizeWithBuilder();
+            } catch (loloof64::IllegalPositionException & /* e */) {
+
+            }
+        });
+
+        connect(_copyFenButton, &QPushButton::clicked, [this]() {
+            QClipboard *clipboard = QApplication::clipboard();
+            clipboard->setText(_positionBuilder->getFen());
+        });
 }
 
 void PositionEditorWidget::updateSelectedPiece()
