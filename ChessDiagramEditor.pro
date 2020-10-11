@@ -19,7 +19,9 @@ DEFINES += USE_C11
 SOURCES += \
     core/positionbuilder.cpp \
     gui/componentszone.cpp \
+    gui/hints/hintarrow.cpp \
     gui/mainwindow.cpp \
+    gui/newhintarrowdialog.cpp \
     gui/position_editor/positioneditor.cpp \
     gui/position_editor/positioneditorwidget.cpp \
     libs/chessx-pgn/database/analysis.cpp \
@@ -89,7 +91,9 @@ SOURCES += \
 HEADERS += \
     core/positionbuilder.h \
     gui/componentszone.h \
+    gui/hints/hintarrow.h \
     gui/mainwindow.h \
+    gui/newhintarrowdialog.h \
     gui/position_editor/positioneditor.h \
     gui/position_editor/positioneditorwidget.h \
     libs/chessx-pgn/database/abk.h \

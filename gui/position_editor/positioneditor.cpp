@@ -78,8 +78,6 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
     {
         for (auto col: colsIndexes)
         {
-            const auto file = col;
-            const auto rank = 7-row;
 
             // draw cell
             const auto isWhiteCell = (row+col) %2 == 0;
@@ -89,6 +87,19 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
 
             painter.setPen(cellColor);
             painter.fillRect(x, y, localCellsSize, localCellsSize, cellColor);
+        }
+    }
+
+    // painting pieces
+    for (auto row: rowsIndexes)
+    {
+        for (auto col: colsIndexes)
+        {
+            const auto file = col;
+            const auto rank = 7-row;
+
+            const auto x = int(floor(localCellsSize * (0.5 + col)));
+            const auto y = int(floor(localCellsSize * (0.5 + row)));
 
             // draw piece
             const auto pieceValue = _position.getPieceFenAt(file, rank);
@@ -108,6 +119,11 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
             }
 
         }
+    }
+
+    // painting hint arrows
+    for (auto arrow : _hintArrows) {
+        arrow.paint(painter, localCellsSize);
     }
 
     // painting coordinates
@@ -149,7 +165,7 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
     }
 
     // painting player turn
-    const auto turnColor = _position.isWhiteTurn() ? QColorConstants::White : QColorConstants::Black;
+    const auto turnColor = _position.isWhiteTurn() ? QColor(Qt::white) : QColor(Qt::black);
     const auto turnLocation = int(floor(localCellsSize * 8.5));
     const auto turnSize = int(floor(localCellsSize * 0.5));
     painter.setPen(turnColor);
@@ -195,4 +211,9 @@ void loloof64::PositionEditor::letUserSaveToJPG() {
         _fileDialogPath = selectedPath;
         image.save(selectedPath);
     }
+}
+
+void loloof64::PositionEditor::addHintArrow(HintArrow arrow) {
+    _hintArrows.append(arrow);
+    repaint();
 }

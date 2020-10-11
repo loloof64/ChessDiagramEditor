@@ -16,6 +16,8 @@
 #include <QMessageBox>
 #include "positioneditor.h"
 
+#include "../newhintarrowdialog.h"
+
 class PositionEditorWidget : public QWidget
 {
     Q_OBJECT
@@ -29,6 +31,10 @@ signals:
 private:
     QVBoxLayout * _mainLayout;
     QPushButton *_saveAsImageButton;
+
+    QHBoxLayout *_arrowButtonsLine;
+    QPushButton* _addNewSimpleArrow;
+
     QWidget * _mainEditorZone;
     QHBoxLayout * _mainEditorZoneLayout;
     QVBoxLayout * _piecesButtonsLayout;
@@ -74,6 +80,8 @@ private:
     QPushButton * _copyFenButton;
     QPushButton * _pasteFenButton;
     loloof64::PositionBuilder * _positionBuilder;
+
+    loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
 
     char _editingValue = ' ';
 

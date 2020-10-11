@@ -14,6 +14,9 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 
     _saveAsImageButton = new QPushButton(tr("Save as image"));
 
+    _arrowButtonsLine = new QHBoxLayout();
+    _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
+
     _mainEditorZone = new QWidget();
 
     _mainEditorZoneLayout = new QHBoxLayout();
@@ -122,7 +125,12 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 
     _positionBuilder = new loloof64::PositionBuilder();
 
+    _newSimpleHintArrowDialog = new loloof64::NewHintArrowDialog(this);
+
     _mainLayout->addWidget(_saveAsImageButton);
+
+    _arrowButtonsLine->addWidget(_addNewSimpleArrow);
+    _mainLayout->addLayout(_arrowButtonsLine);
 
     _fenButtonsLine->addWidget(_copyFenButton);
     _fenButtonsLine->addWidget(_pasteFenButton);
@@ -188,6 +196,8 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 }
 
 PositionEditorWidget::~PositionEditorWidget() {
+    delete _newSimpleHintArrowDialog;
+
     delete _pasteFenButton;
     delete _copyFenButton;
     delete _fenButtonsLine;
@@ -236,6 +246,11 @@ PositionEditorWidget::~PositionEditorWidget() {
     delete _piecesButtonsLayout;
     delete _mainEditorZoneLayout;
     delete _mainEditorZone;
+
+
+    delete _addNewSimpleArrow;
+    delete _arrowButtonsLine;
+
     delete _saveAsImageButton;
     delete _mainLayout;
 }
@@ -254,6 +269,11 @@ void PositionEditorWidget::connectComponents()
     connect(_saveAsImageButton, &QPushButton::clicked, [this]() {
         _editorComponent->letUserSaveToJPG();
     });
+
+    connect(_addNewSimpleArrow, &QPushButton::clicked, [this]() {
+        _newSimpleHintArrowDialog->exec();
+    });
+
     connect(_editorComponent, &loloof64::PositionEditor::cellSelected, [this](int file, int rank) {
         _positionBuilder->setPieceAtSquare(_editingValue, loloof64::BoardSquare(file, rank));
         synchronizeWithBuilder();
@@ -347,6 +367,12 @@ void PositionEditorWidget::connectComponents()
     connect(_blackKingButton, &QPushButton::clicked, [this]() {
         _editingValue = 'k';
         updateSelectedPiece();
+    });
+
+    connect(_newSimpleHintArrowDialog, &loloof64::NewHintArrowDialog::newSimpleHintArrowRequested,
+            [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color) {
+        loloof64::HintArrow arrowToAdd(startcell, endCell, color);
+        _editorComponent->addHintArrow(arrowToAdd);
     });
 }
 

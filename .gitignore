@@ -1,3 +1,4 @@
 *.pro.user
 /resources/translations/*.qm
 EtBxfU.json
+vgcore.*
