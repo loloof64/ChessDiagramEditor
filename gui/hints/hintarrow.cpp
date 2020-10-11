@@ -35,7 +35,7 @@ void loloof64::HintArrow::drawArrowBetweenCells(QPainter &painter, QColor color,
     const auto deltaY = endRow - startRow;
     const auto baseLineLength = sqrt(deltaX*deltaX + deltaY*deltaY);
     const auto baseLineAngleDegrees = atan2(deltaY, deltaX) * 180.0 / 3.1415927;
-    const auto arrowLineLength = int(floor(baseLineLength * 10));
+    const auto arrowLineLength = int(floor(baseLineLength * cellsSize * 0.3 ));
 
     const auto baseLineStartX = int(floor(cellsSize * (startCol + 1)));
     const auto baseLineStartY = int(floor(cellsSize * (startRow + 1)));

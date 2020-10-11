@@ -175,8 +175,8 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
 
 void loloof64::PositionEditor::letUserSaveToJPG() {
     bool ok;
-    const int value = 36;
-    const int min = 36;
+    const int min = 100;
+    const int value = min;
     const int max = 2147483647;
     const int step = 1;
     int imageSizePx = QInputDialog::getInt(parentWidget(),
