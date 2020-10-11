@@ -380,7 +380,7 @@ void PositionEditorWidget::connectComponents()
 
     connect(_newSimpleHintArrowDialog, &loloof64::NewHintArrowDialog::newSimpleHintArrowRequested,
             [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color) {
-        auto arrowToAdd = new loloof64::NumberedHintArrow(startcell, endCell, color);
+        auto arrowToAdd = new loloof64::HintArrow(startcell, endCell, color);
         _editorComponent->addHintArrow(arrowToAdd);
     });
 
