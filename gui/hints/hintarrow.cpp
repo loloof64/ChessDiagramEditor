@@ -23,7 +23,7 @@ void loloof64::HintArrow::paint(QPainter &painter, int cellsSize) const {
 void loloof64::HintArrow::drawArrowBetweenCells(QPainter &painter, QColor color, Cell startCell, Cell endCell, int cellsSize) const
 {
     QPen pen = color;
-    pen.setWidth(int(floor(cellsSize * 0.2)));
+    pen.setWidth(int(floor(cellsSize * 0.12)));
     painter.setPen(pen);
 
     const auto startCol = startCell.file;
