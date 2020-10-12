@@ -1038,14 +1038,14 @@ b%2
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="504"/>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="514"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="499"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="520"/>
         <source>Confirm clearing ?</source>
         <translation>¿Confirmar la eliminación?</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="504"/>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="514"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="499"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="520"/>
         <source>Do you really want to delete all ?</source>
         <translation>¿Estás seguro de que quieres borrar todo?</translation>
     </message>
@@ -1169,22 +1169,32 @@ b%2
 <context>
     <name>loloof64::PositionEditor</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="200"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="201"/>
         <source>Image size</source>
         <translation>Tamaño de la imagen</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="201"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="202"/>
         <source>Wished image width/height size in pixels ?</source>
         <translation>¿Quiere ancho / alto en píxeles?</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="220"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="214"/>
+        <source>Color mode</source>
+        <translation>Modo de color</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="215"/>
+        <source>Do you want a grayscale version instead ?</source>
+        <translation>¿Preferirías una versión en escala de grises?</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="226"/>
         <source>Choose the destination image</source>
         <translation>Elige la imagen de destino</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="222"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="228"/>
         <source>JPEG image (*.jpg *.jpeg)</source>
         <translation>Imagen JPEG (*.jpg *.jpeg)</translation>
     </message>
