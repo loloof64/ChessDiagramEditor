@@ -123,15 +123,13 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _copyFenButton = new QPushButton(tr("Copy FEN"));
     _pasteFenButton = new QPushButton(tr("Paste FEN"));
 
-    _newElementOptions = new QWidget();
-    _newElementOptionsLayout = new QHBoxLayout();
-    _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
-    _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
-
     _elementsListOptions = new QWidget();
     _elementsListOptionsLayout = new QHBoxLayout();
     _elementsListArrowsZoneLayout = new QVBoxLayout();
     _elementsListArrowsZoneLabel = new QLabel(tr("Arrows"));
+    _newElementlistArrowsZoneLayout = new QHBoxLayout();
+    _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
+    _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
     _elementsListArrowsZoneMainWidget = new QListWidget();
     _elementsListArrowsZoneDeleteButton = new QPushButton(tr("Delete"));
 
@@ -144,14 +142,13 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _mainLayout->addWidget(_saveAsImageButton);
 
     _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneLabel);
+    _newElementlistArrowsZoneLayout->addWidget(_addNewSimpleArrow);
+    _newElementlistArrowsZoneLayout->addWidget(_addNewNumberedArrow);
+    _elementsListArrowsZoneLayout->addLayout(_newElementlistArrowsZoneLayout);
     _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneMainWidget);
     _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneDeleteButton);
     _elementsListOptionsLayout->addLayout(_elementsListArrowsZoneLayout);
     _elementsListOptions->setLayout(_elementsListOptionsLayout);
-
-    _newElementOptionsLayout->addWidget(_addNewSimpleArrow);
-    _newElementOptionsLayout->addWidget(_addNewNumberedArrow);
-    _newElementOptions->setLayout(_newElementOptionsLayout);
 
     _fenButtonsLine->addWidget(_copyFenButton);
     _fenButtonsLine->addWidget(_pasteFenButton);
@@ -178,7 +175,6 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 
     _optionsZone->addTab(_generalOptions, tr("General", "General options of position editor"));
     _optionsZone->addTab(_fenOptions, tr("FEN", "Fen options of position editor"));
-    _optionsZone->addTab(_newElementOptions, tr("New element", "New element options of position editor"));
     _optionsZone->addTab(_elementsListOptions, tr("Elements list", "Elements list options of position editor"));
 
     _whitePiecesButtonsLine->addWidget(_whitePawnButton);
@@ -226,15 +222,13 @@ PositionEditorWidget::~PositionEditorWidget() {
 
     delete _elementsListArrowsZoneDeleteButton;
     delete _elementsListArrowsZoneMainWidget;
+    delete _addNewNumberedArrow;
+    delete _addNewSimpleArrow;
+    delete _newElementlistArrowsZoneLayout;
     delete _elementsListArrowsZoneLabel;
     delete _elementsListArrowsZoneLayout;
     delete _elementsListOptionsLayout;
     delete _elementsListOptions;
-
-    delete _addNewNumberedArrow;
-    delete _addNewSimpleArrow;
-    delete _newElementOptionsLayout;
-    delete _newElementOptions;
 
     delete _pasteFenButton;
     delete _copyFenButton;
