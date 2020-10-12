@@ -19,6 +19,7 @@ DEFINES += USE_C11
 SOURCES += \
     core/positionbuilder.cpp \
     gui/componentszone.cpp \
+    gui/hints/chessboardcell.cpp \
     gui/hints/hintarrow.cpp \
     gui/hints/numberedhintarrow.cpp \
     gui/mainwindow.cpp \
@@ -92,6 +93,7 @@ SOURCES += \
 HEADERS += \
     core/positionbuilder.h \
     gui/componentszone.h \
+    gui/hints/chessboardcell.h \
     gui/hints/hintarrow.h \
     gui/hints/numberedhintarrow.h \
     gui/mainwindow.h \

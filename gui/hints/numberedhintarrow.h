@@ -8,7 +8,7 @@ class NumberedHintArrow : public HintArrow
 {
 public:
     NumberedHintArrow() : HintArrow(){};
-    NumberedHintArrow(Cell start, Cell end, QColor color, int number = 1);
+    NumberedHintArrow(ChessBoardCell start, ChessBoardCell end, QColor color, int number = 1);
     virtual void paint(QPainter &painter, int cellsSize) const;
 
 private:

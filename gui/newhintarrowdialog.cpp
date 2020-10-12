@@ -103,8 +103,8 @@ loloof64::NewHintArrowDialog::NewHintArrowDialog(QWidget *parent, bool withNumbe
         auto startRank = _startCellRankCombo->currentIndex();
         auto endFile = _endCellFileCombo->currentIndex();
         auto endRank = _endCellRankCombo->currentIndex();
-        Cell startCell(startFile, startRank);
-        Cell endCell(endFile, endRank);
+        ChessBoardCell startCell(startFile, startRank);
+        ChessBoardCell endCell(endFile, endRank);
         if (_withNumberEditor) {
             auto number = _numberEditorLineEdit->text().toInt();
             emit newNumberedHintArrowRequested(startCell, endCell, _selectedColor, number);

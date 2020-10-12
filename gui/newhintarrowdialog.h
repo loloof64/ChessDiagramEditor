@@ -22,8 +22,8 @@ public:
     ~NewHintArrowDialog();
 
 signals:
-    void newSimpleHintArrowRequested(Cell startcell, Cell endCell, QColor color);
-    void newNumberedHintArrowRequested(Cell startCell, Cell endCell, QColor _selectedColor, int number);
+    void newSimpleHintArrowRequested(ChessBoardCell startcell, ChessBoardCell endCell, QColor color);
+    void newNumberedHintArrowRequested(ChessBoardCell startCell, ChessBoardCell endCell, QColor _selectedColor, int number);
 
 private:
     bool _withNumberEditor;

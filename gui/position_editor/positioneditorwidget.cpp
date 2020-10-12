@@ -402,7 +402,7 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_newSimpleHintArrowDialog, &loloof64::NewHintArrowDialog::newSimpleHintArrowRequested,
-            [this](loloof64::Cell startCell, loloof64::Cell endCell, QColor color) {
+            [this](loloof64::ChessBoardCell startCell, loloof64::ChessBoardCell endCell, QColor color) {
         auto arrowToAdd = new loloof64::HintArrow(startCell, endCell, color);
         auto startCellStr = startCell.toStdString();
         auto endCellStr = endCell.toStdString();
@@ -415,7 +415,7 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_newNumberedHintArrowDialog, &loloof64::NewHintArrowDialog::newNumberedHintArrowRequested,
-            [this](loloof64::Cell startCell, loloof64::Cell endCell, QColor color, int number) {
+            [this](loloof64::ChessBoardCell startCell, loloof64::ChessBoardCell endCell, QColor color, int number) {
        auto arrowToAdd = new loloof64::NumberedHintArrow(startCell, endCell, color, number);
        auto startCellStr = startCell.toStdString();
        auto endCellStr = endCell.toStdString();

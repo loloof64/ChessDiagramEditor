@@ -1,7 +1,7 @@
 #include "numberedhintarrow.h"
 #include <cmath>
 
-loloof64::NumberedHintArrow::NumberedHintArrow(Cell start, Cell end, QColor color, int number):
+loloof64::NumberedHintArrow::NumberedHintArrow(ChessBoardCell start, ChessBoardCell end, QColor color, int number):
     HintArrow(start, end, color),  _number(number)
 {
 

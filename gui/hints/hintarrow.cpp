@@ -1,15 +1,7 @@
 #include "hintarrow.h"
 #include <cmath>
 
-loloof64::Cell::Cell(int file, int rank) {
-    if (file < 0 || file > 7) throw "File not in range [0,7].";
-    if (rank < 0 || rank > 7) throw "Rank not in range [0,7].";
-
-    this->file = file;
-    this->rank = rank;
-}
-
-loloof64::HintArrow::HintArrow(Cell start, Cell end, QColor color):
+loloof64::HintArrow::HintArrow(ChessBoardCell start, ChessBoardCell end, QColor color):
     _start(start), _end(end), _color(color)
 {
 
@@ -24,7 +16,7 @@ void loloof64::HintArrow::paint(QPainter &painter, int cellsSize) const {
 }
 
 
-void loloof64::HintArrow::drawArrowBetweenCells(QPainter &painter, QColor color, Cell startCell, Cell endCell, int cellsSize) const
+void loloof64::HintArrow::drawArrowBetweenCells(QPainter &painter, QColor color, ChessBoardCell startCell, ChessBoardCell endCell, int cellsSize) const
 {
     QPen pen = color;
     pen.setWidth(int(floor(cellsSize * 0.12)));
