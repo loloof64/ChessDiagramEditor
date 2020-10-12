@@ -1003,19 +1003,24 @@ b%2
         <translation>Supprimer</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="174"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="134"/>
+        <source>Delete all</source>
+        <translation>Tout supprimer</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="176"/>
         <source>Arrows</source>
         <comment>Arrows list options of position editor</comment>
         <translation>Flèches</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="175"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="177"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="176"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="178"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>

@@ -131,6 +131,7 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
     _arrowsListOptionsMainWidget = new QListWidget();
     _arrowsListOptionsDeleteButton = new QPushButton(tr("Delete"));
+    _arrowsListOptionDeleteAllButton = new QPushButton(tr("Delete all"));
 
 
     _positionBuilder = new loloof64::PositionBuilder();
@@ -146,6 +147,7 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _arrowsListOptionsLayout->addLayout(_newArrowListOptionsButtonsNewLayout);
     _arrowsListOptionsLayout->addWidget(_arrowsListOptionsMainWidget);
     _arrowsListOptionsLayout->addWidget(_arrowsListOptionsDeleteButton);
+    _arrowsListOptionsLayout->addWidget(_arrowsListOptionDeleteAllButton);
     _arrowsListOptions->setLayout(_arrowsListOptionsLayout);
 
     _fenButtonsLine->addWidget(_copyFenButton);
@@ -218,6 +220,7 @@ PositionEditorWidget::~PositionEditorWidget() {
 
     delete _positionBuilder;
 
+    delete _arrowsListOptionDeleteAllButton;
     delete _arrowsListOptionsDeleteButton;
     delete _arrowsListOptionsMainWidget;
     delete _addNewNumberedArrow;
@@ -446,6 +449,11 @@ void PositionEditorWidget::connectComponents()
           _editorComponent->removeHintArrow(selectedArrowIndex);
           _arrowsListOptionsMainWidget->takeItem(selectedArrowIndex);
         }
+    });
+
+    connect(_arrowsListOptionDeleteAllButton, &QPushButton::clicked, [this]() {
+       _editorComponent->removeAllHintArrows();
+       _arrowsListOptionsMainWidget->clear();
     });
 }
 

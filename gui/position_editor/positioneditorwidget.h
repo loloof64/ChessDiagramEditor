@@ -87,6 +87,7 @@ private:
     QPushButton *_addNewNumberedArrow;
     QListWidget * _arrowsListOptionsMainWidget;
     QPushButton * _arrowsListOptionsDeleteButton;
+    QPushButton * _arrowsListOptionDeleteAllButton;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
     loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;

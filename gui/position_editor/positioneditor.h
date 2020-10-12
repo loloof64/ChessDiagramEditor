@@ -23,6 +23,7 @@ namespace loloof64 {
 
         void addHintArrow(HintArrow *arrow);
         void removeHintArrow(int arrowIndex);
+        void removeAllHintArrows();
 
     signals:
         void cellSelected(int file, int rank);
