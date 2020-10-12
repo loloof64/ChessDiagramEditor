@@ -10,7 +10,7 @@ platform: x64
 skip_non_tags: true
 
 environment:
-  QTDIR: C:\Qt\5.14.2\mingw73_64
+  QTDIR: C:\Qt\5.12.6\mingw73_64
 
 install:
   - choco install -y InnoSetup
