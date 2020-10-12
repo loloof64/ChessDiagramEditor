@@ -32,10 +32,6 @@ private:
     QVBoxLayout * _mainLayout;
     QPushButton *_saveAsImageButton;
 
-    QHBoxLayout *_addArrowButtonsLine;
-    QPushButton* _addNewSimpleArrow;
-    QPushButton *_addNewNumberedArrow;
-
     QWidget * _mainEditorZone;
     QHBoxLayout * _mainEditorZoneLayout;
     QVBoxLayout * _piecesButtonsLayout;
@@ -81,6 +77,11 @@ private:
     QPushButton * _copyFenButton;
     QPushButton * _pasteFenButton;
     loloof64::PositionBuilder * _positionBuilder;
+
+    QWidget * _newElementOptions;
+    QHBoxLayout * _newElementOptionsLayout;
+    QPushButton* _addNewSimpleArrow;
+    QPushButton *_addNewNumberedArrow;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
     loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;
