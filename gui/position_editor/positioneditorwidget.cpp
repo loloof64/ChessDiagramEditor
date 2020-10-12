@@ -425,19 +425,28 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_pasteFenButton, &QPushButton::clicked, [this]() {
-            const QClipboard *clipboard = QApplication::clipboard();
-            try {
-                _positionBuilder->setFromFen(clipboard->text());
-                synchronizeWithBuilder();
-            } catch (loloof64::IllegalPositionException & /* e */) {
+        const QClipboard *clipboard = QApplication::clipboard();
+        try {
+            _positionBuilder->setFromFen(clipboard->text());
+            synchronizeWithBuilder();
+        } catch (loloof64::IllegalPositionException & /* e */) {
 
-            }
-        });
+        }
+    });
 
-        connect(_copyFenButton, &QPushButton::clicked, [this]() {
-            QClipboard *clipboard = QApplication::clipboard();
-            clipboard->setText(_positionBuilder->getFen());
-        });
+    connect(_copyFenButton, &QPushButton::clicked, [this]() {
+        QClipboard *clipboard = QApplication::clipboard();
+        clipboard->setText(_positionBuilder->getFen());
+    });
+
+    connect(_arrowsListOptionsDeleteButton, &QPushButton::clicked, [this]() {
+        const auto selectedArrowIndex = _arrowsListOptionsMainWidget->currentRow();
+        const auto hasASelection = selectedArrowIndex >= 0;
+        if (hasASelection) {
+          _editorComponent->removeHintArrow(selectedArrowIndex);
+          _arrowsListOptionsMainWidget->takeItem(selectedArrowIndex);
+        }
+    });
 }
 
 void PositionEditorWidget::updateSelectedPiece()

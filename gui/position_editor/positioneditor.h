@@ -22,6 +22,7 @@ namespace loloof64 {
         void letUserSaveToJPG();
 
         void addHintArrow(HintArrow *arrow);
+        void removeHintArrow(int arrowIndex);
 
     signals:
         void cellSelected(int file, int rank);

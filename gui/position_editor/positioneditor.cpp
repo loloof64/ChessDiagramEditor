@@ -219,3 +219,9 @@ void loloof64::PositionEditor::addHintArrow(HintArrow *arrow) {
     _hintArrows.append(arrow);
     repaint();
 }
+
+
+void loloof64::PositionEditor::removeHintArrow(int arrowIndex) {
+    _hintArrows.removeAt(arrowIndex);
+    repaint();
+}
