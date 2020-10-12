@@ -1026,19 +1026,31 @@ b%2
         <translation>Arrows</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="192"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="193"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="193"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="194"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="194"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="504"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="514"/>
+        <source>Confirm clearing ?</source>
+        <translation>Confirm clearing ?</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="504"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="514"/>
+        <source>Do you really want to delete all ?</source>
+        <translation>Do you really want to delete all ?</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="192"/>
         <source>Highlights</source>
         <comment>Highlights options of position editor</comment>
         <translation>Highlights</translation>
@@ -1110,7 +1122,7 @@ b%2
         <translation>Select the color</translation>
     </message>
     <message>
-        <location filename="../../gui/newcellhighlightdialog.cpp" line="78"/>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="79"/>
         <source>Set the highlight values</source>
         <translation>Set the highlight values</translation>
     </message>

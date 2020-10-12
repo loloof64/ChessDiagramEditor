@@ -493,8 +493,15 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_arrowsListOptionDeleteAllButton, &QPushButton::clicked, [this]() {
-       _editorComponent->removeAllHintArrows();
-       _arrowsListOptionsMainWidget->clear();
+        const auto notNeeded = _arrowsListOptionsMainWidget->count() == 0;
+        if (notNeeded) return;
+
+        const auto confirmed = QMessageBox::question(this, tr("Confirm clearing ?"), tr("Do you really want to delete all ?"))
+                == QMessageBox::StandardButton::Yes;
+        if (confirmed) {
+           _editorComponent->removeAllHintArrows();
+           _arrowsListOptionsMainWidget->clear();
+        }
     });
 
     connect(_highlightsListOptionsDeleteButton, &QPushButton::clicked, [this]() {
@@ -507,8 +514,15 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_highlightsListOptionsDeleteAllButton, &QPushButton::clicked, [this]() {
-        _editorComponent->removeAllHighlights();
-        _highlightsListOptionsMainWidget->clear();
+        const auto notNeeded = _highlightsListOptionsMainWidget->count() == 0;
+        if (notNeeded) return;
+
+        const auto confirmed = QMessageBox::question(this, tr("Confirm clearing ?"), tr("Do you really want to delete all ?"))
+                == QMessageBox::StandardButton::Yes;
+        if (confirmed) {
+            _editorComponent->removeAllHighlights();
+            _highlightsListOptionsMainWidget->clear();
+        }
     });
 }
 
