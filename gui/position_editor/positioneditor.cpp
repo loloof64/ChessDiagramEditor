@@ -213,7 +213,7 @@ void loloof64::PositionEditor::letUserSaveToJPG() {
 
     const auto monochromeMode = QMessageBox::question(this, tr("Color mode"),
                                                       tr("Do you want a grayscale version instead ?")) == QMessageBox::StandardButton::Yes;
-    const auto imageFormat = monochromeMode ? QImage::Format_Grayscale16 : QImage::Format_ARGB32;
+    const auto imageFormat = monochromeMode ? QImage::Format_Grayscale8 : QImage::Format_ARGB32;
 
     auto image = QImage( imageSizePx,  imageSizePx, imageFormat );
     QPainter painter(&image);

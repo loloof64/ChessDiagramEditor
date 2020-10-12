@@ -5,7 +5,7 @@ Easily create your chess diagrams as JPEG images.
 
 ## Developers   
 
-This project has been made with QtCreator and Qt 5.15.
+This project has been made with QtCreator and Qt 5.9.7.
 
 Don't forget to generate translations files, from resources/translations subfolder, with Qt Linguist.
 
