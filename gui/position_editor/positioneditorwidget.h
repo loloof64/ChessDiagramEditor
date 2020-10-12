@@ -85,7 +85,7 @@ private:
     QHBoxLayout * _newArrowListOptionsButtonsNewLayout;
     QPushButton* _addNewSimpleArrow;
     QPushButton *_addNewNumberedArrow;
-    QWidget * _arrowsListOptionsMainWidget;
+    QListWidget * _arrowsListOptionsMainWidget;
     QPushButton * _arrowsListOptionsDeleteButton;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;

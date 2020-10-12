@@ -8,7 +8,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QMessageBox>
-#include <QListWidgetItem>
+#include <QBrush>
 
 PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 {
@@ -399,15 +399,29 @@ void PositionEditorWidget::connectComponents()
     });
 
     connect(_newSimpleHintArrowDialog, &loloof64::NewHintArrowDialog::newSimpleHintArrowRequested,
-            [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color) {
-        auto arrowToAdd = new loloof64::HintArrow(startcell, endCell, color);
+            [this](loloof64::Cell startCell, loloof64::Cell endCell, QColor color) {
+        auto arrowToAdd = new loloof64::HintArrow(startCell, endCell, color);
+        auto startCellStr = startCell.toStdString();
+        auto endCellStr = endCell.toStdString();
+        auto arrowText = QString::asprintf("%s => %s", startCellStr.c_str(), endCellStr.c_str());
         _editorComponent->addHintArrow(arrowToAdd);
+        _arrowsListOptionsMainWidget->addItem(arrowText);
+        const auto itemsCount = _arrowsListOptionsMainWidget->count();
+        QBrush brush(color);
+        _arrowsListOptionsMainWidget->item(itemsCount - 1)->setForeground(brush);
     });
 
     connect(_newNumberedHintArrowDialog, &loloof64::NewHintArrowDialog::newNumberedHintArrowRequested,
-            [this](loloof64::Cell startcell, loloof64::Cell endCell, QColor color, int number) {
-       auto arrowToAdd = new loloof64::NumberedHintArrow(startcell, endCell, color, number);
+            [this](loloof64::Cell startCell, loloof64::Cell endCell, QColor color, int number) {
+       auto arrowToAdd = new loloof64::NumberedHintArrow(startCell, endCell, color, number);
+       auto startCellStr = startCell.toStdString();
+       auto endCellStr = endCell.toStdString();
+       auto arrowText = QString::asprintf("%s => %s (%d)", startCellStr.c_str(), endCellStr.c_str(), number);
        _editorComponent->addHintArrow(arrowToAdd);
+       _arrowsListOptionsMainWidget->addItem(arrowText);
+       const auto itemsCount = _arrowsListOptionsMainWidget->count();
+       QBrush brush(color);
+       _arrowsListOptionsMainWidget->item(itemsCount - 1)->setForeground(brush);
     });
 
     connect(_pasteFenButton, &QPushButton::clicked, [this]() {

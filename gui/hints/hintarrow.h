@@ -3,12 +3,18 @@
 
 #include <QColor>
 #include <QPainter>
+#include <QString>
+#include <string.h>
 
 namespace loloof64 {
 struct Cell {
     Cell(){};
     Cell(int file, int rank);
     int file, rank;
+    const std::string toStdString() {
+        auto result = QString::asprintf("%c%c", 'a' + file, '1' + rank);
+        return result.toStdString();
+    };
 };
 
 class HintArrow
