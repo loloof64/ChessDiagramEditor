@@ -8,6 +8,7 @@
 #include <QApplication>
 #include <QClipboard>
 #include <QMessageBox>
+#include <QListWidgetItem>
 
 PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 {
@@ -127,12 +128,26 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
     _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
 
+    _elementsListOptions = new QWidget();
+    _elementsListOptionsLayout = new QHBoxLayout();
+    _elementsListArrowsZoneLayout = new QVBoxLayout();
+    _elementsListArrowsZoneLabel = new QLabel(tr("Arrows"));
+    _elementsListArrowsZoneMainWidget = new QListWidget();
+    _elementsListArrowsZoneDeleteButton = new QPushButton(tr("Delete"));
+
+
     _positionBuilder = new loloof64::PositionBuilder();
 
     _newSimpleHintArrowDialog = new loloof64::NewHintArrowDialog(this);
     _newNumberedHintArrowDialog = new loloof64::NewHintArrowDialog(this, true);
 
     _mainLayout->addWidget(_saveAsImageButton);
+
+    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneLabel);
+    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneMainWidget);
+    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneDeleteButton);
+    _elementsListOptionsLayout->addLayout(_elementsListArrowsZoneLayout);
+    _elementsListOptions->setLayout(_elementsListOptionsLayout);
 
     _newElementOptionsLayout->addWidget(_addNewSimpleArrow);
     _newElementOptionsLayout->addWidget(_addNewNumberedArrow);
@@ -164,6 +179,7 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _optionsZone->addTab(_generalOptions, tr("General", "General options of position editor"));
     _optionsZone->addTab(_fenOptions, tr("FEN", "Fen options of position editor"));
     _optionsZone->addTab(_newElementOptions, tr("New element", "New element options of position editor"));
+    _optionsZone->addTab(_elementsListOptions, tr("Elements list", "Elements list options of position editor"));
 
     _whitePiecesButtonsLine->addWidget(_whitePawnButton);
     _whitePiecesButtonsLine->addWidget(_whiteKnightButton);
@@ -207,6 +223,13 @@ PositionEditorWidget::~PositionEditorWidget() {
     delete _newSimpleHintArrowDialog;
 
     delete _positionBuilder;
+
+    delete _elementsListArrowsZoneDeleteButton;
+    delete _elementsListArrowsZoneMainWidget;
+    delete _elementsListArrowsZoneLabel;
+    delete _elementsListArrowsZoneLayout;
+    delete _elementsListOptionsLayout;
+    delete _elementsListOptions;
 
     delete _addNewNumberedArrow;
     delete _addNewSimpleArrow;

@@ -13,6 +13,7 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QPixmap>
+#include <QListWidget>
 #include <QMessageBox>
 #include "positioneditor.h"
 
@@ -82,6 +83,13 @@ private:
     QHBoxLayout * _newElementOptionsLayout;
     QPushButton* _addNewSimpleArrow;
     QPushButton *_addNewNumberedArrow;
+
+    QWidget * _elementsListOptions;
+    QHBoxLayout * _elementsListOptionsLayout;
+    QVBoxLayout * _elementsListArrowsZoneLayout;
+    QLabel * _elementsListArrowsZoneLabel;
+    QWidget * _elementsListArrowsZoneMainWidget;
+    QPushButton * _elementsListArrowsZoneDeleteButton;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
     loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;

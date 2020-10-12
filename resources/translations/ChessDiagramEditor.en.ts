@@ -933,82 +933,98 @@ b%2
 <context>
     <name>PositionEditorWidget</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="17"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="18"/>
         <source>Save as image</source>
         <translation>Save as image</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="127"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="128"/>
         <source>Add simple arrow</source>
         <translation>Add simple arrow</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="128"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="129"/>
         <source>Add numbered arrow</source>
         <translation>Add numbered arrow</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="90"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="91"/>
         <source>Current selection</source>
         <translation>Current selection</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="100"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="101"/>
         <source>Turn</source>
         <translation>Turn</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="103"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="104"/>
         <source>White</source>
         <translation>White</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="104"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="105"/>
         <source>Black</source>
         <translation>Black</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="109"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="110"/>
         <source>Erase board</source>
         <translation>Erase board</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="110"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="111"/>
         <source>Standard position</source>
         <translation>Standard position</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="117"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="118"/>
         <source>FEN</source>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="122"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="123"/>
         <source>Copy FEN</source>
         <translation>Copy FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="123"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="124"/>
         <source>Paste FEN</source>
         <translation>Paste FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="164"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="134"/>
+        <source>Arrows</source>
+        <translation>Arrows</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="136"/>
+        <source>Delete</source>
+        <translation>Delete</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="179"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="165"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="180"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="166"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="181"/>
         <source>New element</source>
         <comment>New element options of position editor</comment>
         <translation>New element</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="182"/>
+        <source>Elements list</source>
+        <comment>Elements list options of position editor</comment>
+        <translation>Elements list</translation>
     </message>
 </context>
 <context>
