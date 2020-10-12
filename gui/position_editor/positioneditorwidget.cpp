@@ -133,13 +133,28 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _arrowsListOptionsDeleteButton = new QPushButton(tr("Delete"));
     _arrowsListOptionDeleteAllButton = new QPushButton(tr("Delete all"));
 
+    _highlightsListOptions = new QWidget();
+    _highlightsListOptionsLayout = new QVBoxLayout();
+    _highlightsListOptionsLabel = new QLabel(tr("Highlights"));
+    _addNewHighlightButton = new QPushButton(tr("New highlight"));
+    _highlightsListOptionsMainWidget = new QListWidget();
+    _highlightsListOptionsDeleteButton = new QPushButton(tr("Delete"));
+    _highlightsListOptionsDeleteAllButton = new QPushButton(tr("Delete all"));
 
     _positionBuilder = new loloof64::PositionBuilder();
 
     _newSimpleHintArrowDialog = new loloof64::NewHintArrowDialog(this);
     _newNumberedHintArrowDialog = new loloof64::NewHintArrowDialog(this, true);
+    _newCellHighlightingDialog = new loloof64::NewCellHighlightDialog(this);
 
     _mainLayout->addWidget(_saveAsImageButton);
+
+    _highlightsListOptionsLayout->addWidget(_highlightsListOptionsLabel);
+    _highlightsListOptionsLayout->addWidget(_addNewHighlightButton);
+    _highlightsListOptionsLayout->addWidget(_highlightsListOptionsMainWidget);
+    _highlightsListOptionsLayout->addWidget(_highlightsListOptionsDeleteButton);
+    _highlightsListOptionsLayout->addWidget(_highlightsListOptionsDeleteAllButton);
+    _highlightsListOptions->setLayout(_highlightsListOptionsLayout);
 
     _arrowsListOptionsLayout->addWidget(_arrowsListOptionsLabel);
     _newArrowListOptionsButtonsNewLayout->addWidget(_addNewSimpleArrow);
@@ -174,6 +189,7 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _generalOptions->setLayout(_generalOptionsLayout);
 
     _optionsZone->addTab(_arrowsListOptions, tr("Arrows", "Arrows list options of position editor"));
+    _optionsZone->addTab(_highlightsListOptions, tr("Highlights", "Highlights options of position editor"));
     _optionsZone->addTab(_generalOptions, tr("General", "General options of position editor"));
     _optionsZone->addTab(_fenOptions, tr("FEN", "Fen options of position editor"));
 
@@ -215,10 +231,19 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 }
 
 PositionEditorWidget::~PositionEditorWidget() {
+    delete _newCellHighlightingDialog;
     delete _newNumberedHintArrowDialog;
     delete _newSimpleHintArrowDialog;
 
     delete _positionBuilder;
+
+    delete _highlightsListOptionsDeleteAllButton;
+    delete _highlightsListOptionsDeleteButton;
+    delete _highlightsListOptionsMainWidget;
+    delete _addNewHighlightButton;
+    delete _highlightsListOptionsLabel;
+    delete _highlightsListOptionsLayout;
+    delete _highlightsListOptions;
 
     delete _arrowsListOptionDeleteAllButton;
     delete _arrowsListOptionsDeleteButton;
@@ -304,6 +329,10 @@ void PositionEditorWidget::connectComponents()
 
     connect(_addNewNumberedArrow, &QPushButton::clicked, [this]() {
        _newNumberedHintArrowDialog->exec();
+    });
+
+    connect(_addNewHighlightButton, &QPushButton::clicked, [this]() {
+       _newCellHighlightingDialog->exec();
     });
 
     connect(_editorComponent, &loloof64::PositionEditor::cellSelected, [this](int file, int rank) {
@@ -427,6 +456,18 @@ void PositionEditorWidget::connectComponents()
        _arrowsListOptionsMainWidget->item(itemsCount - 1)->setForeground(brush);
     });
 
+    connect(_newCellHighlightingDialog, &loloof64::NewCellHighlightDialog::newCellHighlight,
+            [this](loloof64::ChessBoardCell cell, QColor color) {
+        auto highlightToAdd = new loloof64::CellHighlight(cell, color);
+        auto cellStr = cell.toStdString();
+        auto highlightText = QString::asprintf("%s", cellStr.c_str());
+        _editorComponent->addCellHighlight(highlightToAdd);
+        _highlightsListOptionsMainWidget->addItem(highlightText);
+        const auto itemsCount = _highlightsListOptionsMainWidget->count();
+        QBrush brush(color);
+        _highlightsListOptionsMainWidget->item(itemsCount - 1)->setForeground(brush);
+    });
+
     connect(_pasteFenButton, &QPushButton::clicked, [this]() {
         const QClipboard *clipboard = QApplication::clipboard();
         try {
@@ -454,6 +495,20 @@ void PositionEditorWidget::connectComponents()
     connect(_arrowsListOptionDeleteAllButton, &QPushButton::clicked, [this]() {
        _editorComponent->removeAllHintArrows();
        _arrowsListOptionsMainWidget->clear();
+    });
+
+    connect(_highlightsListOptionsDeleteButton, &QPushButton::clicked, [this]() {
+       const auto selectedHighlightIndex = _highlightsListOptionsMainWidget->currentRow();
+       const auto hasASelection = selectedHighlightIndex >= 0;
+       if (hasASelection) {
+           _editorComponent->removeHighlight(selectedHighlightIndex);
+           _highlightsListOptionsMainWidget->takeItem(selectedHighlightIndex);
+       }
+    });
+
+    connect(_highlightsListOptionsDeleteAllButton, &QPushButton::clicked, [this]() {
+        _editorComponent->removeAllHighlights();
+        _highlightsListOptionsMainWidget->clear();
     });
 }
 

@@ -19,10 +19,12 @@ DEFINES += USE_C11
 SOURCES += \
     core/positionbuilder.cpp \
     gui/componentszone.cpp \
+    gui/hints/cellhighlight.cpp \
     gui/hints/chessboardcell.cpp \
     gui/hints/hintarrow.cpp \
     gui/hints/numberedhintarrow.cpp \
     gui/mainwindow.cpp \
+    gui/newcellhighlightdialog.cpp \
     gui/newhintarrowdialog.cpp \
     gui/position_editor/positioneditor.cpp \
     gui/position_editor/positioneditorwidget.cpp \
@@ -93,10 +95,12 @@ SOURCES += \
 HEADERS += \
     core/positionbuilder.h \
     gui/componentszone.h \
+    gui/hints/cellhighlight.h \
     gui/hints/chessboardcell.h \
     gui/hints/hintarrow.h \
     gui/hints/numberedhintarrow.h \
     gui/mainwindow.h \
+    gui/newcellhighlightdialog.h \
     gui/newhintarrowdialog.h \
     gui/position_editor/positioneditor.h \
     gui/position_editor/positioneditorwidget.h \

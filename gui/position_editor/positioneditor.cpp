@@ -22,6 +22,10 @@ void loloof64::PositionEditor::paintEvent(QPaintEvent * /*event*/)
 
 loloof64::PositionEditor::~PositionEditor()
 {
+    for (auto *highlightingDef : _cellsHighlightings) {
+        delete highlightingDef;
+    }
+
     for (auto *arrowDef : _hintArrows) {
         delete arrowDef;
     }
@@ -90,6 +94,17 @@ void loloof64::PositionEditor::corePaint(QPainter &painter, int wholeSizePx) con
             painter.setPen(cellColor);
             painter.fillRect(x, y, localCellsSize, localCellsSize, cellColor);
         }
+    }
+
+    // paing cells highlightings
+    for (auto highlight : _cellsHighlightings) {
+        const auto cell = highlight->getRelatedCell();
+        const auto x = int(floor(localCellsSize * (0.5 + cell.file)));
+        const auto y = int(floor(localCellsSize * (7.5 - cell.rank)));
+        const auto cellColor = highlight->getBackgroundColor();
+
+        painter.setPen(cellColor);
+        painter.fillRect(x, y, localCellsSize, localCellsSize, cellColor);
     }
 
     // painting pieces
@@ -228,5 +243,20 @@ void loloof64::PositionEditor::removeHintArrow(int arrowIndex) {
 
 void loloof64::PositionEditor::removeAllHintArrows() {
     _hintArrows.clear();
+    repaint();
+}
+
+void loloof64::PositionEditor::addCellHighlight(CellHighlight *highlight) {
+    _cellsHighlightings.append(highlight);
+    repaint();
+}
+
+void loloof64::PositionEditor::removeHighlight(int highlightIndex) {
+    _cellsHighlightings.removeAt(highlightIndex);
+    repaint();
+}
+
+void loloof64::PositionEditor::removeAllHighlights() {
+    _cellsHighlightings.clear();
     repaint();
 }

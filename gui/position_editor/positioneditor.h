@@ -8,6 +8,7 @@
 #include "../../core/positionbuilder.h"
 #include "../../core/adapters/thcposition.h"
 #include "../hints/hintarrow.h"
+#include "../hints/cellhighlight.h"
 
 namespace loloof64 {
     class PositionEditor : public QWidget
@@ -25,6 +26,10 @@ namespace loloof64 {
         void removeHintArrow(int arrowIndex);
         void removeAllHintArrows();
 
+        void addCellHighlight(CellHighlight *highlight);
+        void removeHighlight(int highlightIndex);
+        void removeAllHighlights();
+
     signals:
         void cellSelected(int file, int rank);
 
@@ -33,6 +38,7 @@ namespace loloof64 {
         loloof64::ThcPosition _position;
         QString _fileDialogPath;
         QVector<HintArrow *> _hintArrows;
+        QVector<CellHighlight *> _cellsHighlightings;
 
         void corePaint(QPainter &painter, int wholeSizePx) const;
         void paintEvent(QPaintEvent *event) override;

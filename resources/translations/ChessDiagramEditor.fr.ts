@@ -999,31 +999,49 @@ b%2
     </message>
     <message>
         <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="133"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="141"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
     <message>
         <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="134"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="142"/>
         <source>Delete all</source>
         <translation>Tout supprimer</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="176"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="138"/>
+        <source>Highlights</source>
+        <translation>Surbrillances</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="139"/>
+        <source>New highlight</source>
+        <translation>Nouvelle surbrillance</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="191"/>
         <source>Arrows</source>
         <comment>Arrows list options of position editor</comment>
         <translation>Flèches</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="177"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="192"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="178"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="193"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="194"/>
+        <source>Highlights</source>
+        <comment>Highlights options of position editor</comment>
+        <translation>Surbrillances</translation>
     </message>
     <message>
         <source>New element</source>
@@ -1062,6 +1080,39 @@ b%2
     <message>
         <source>Draw by the 50 moves rule</source>
         <translation type="vanished">Nulle par la règle des 50 coups</translation>
+    </message>
+</context>
+<context>
+    <name>loloof64::NewCellHighlightDialog</name>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="11"/>
+        <source>File</source>
+        <translation>Colonne</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="21"/>
+        <source>Rank</source>
+        <translation>Rangée</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="31"/>
+        <source>Color</source>
+        <translation>Couleur</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="32"/>
+        <source>Select</source>
+        <translation>Choisir</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="59"/>
+        <source>Select the color</source>
+        <translation>Choisssez la couleur</translation>
+    </message>
+    <message>
+        <location filename="../../gui/newcellhighlightdialog.cpp" line="78"/>
+        <source>Set the highlight values</source>
+        <translation>Définir les valeurs de surbrillance</translation>
     </message>
 </context>
 <context>
@@ -1106,22 +1157,22 @@ b%2
 <context>
     <name>loloof64::PositionEditor</name>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="185"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="200"/>
         <source>Image size</source>
         <translation>Taille de l&apos;image</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="186"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="201"/>
         <source>Wished image width/height size in pixels ?</source>
         <translation>Hauteur/largeur en pixels désirée ?</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="205"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="220"/>
         <source>Choose the destination image</source>
         <translation>Choisissez l&apos;image de destination</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditor.cpp" line="207"/>
+        <location filename="../../gui/position_editor/positioneditor.cpp" line="222"/>
         <source>JPEG image (*.jpg *.jpeg)</source>
         <translation>Image JPEG (*.jpg *.jpeg)</translation>
     </message>

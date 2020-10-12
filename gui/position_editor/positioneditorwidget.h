@@ -18,6 +18,7 @@
 #include "positioneditor.h"
 
 #include "../newhintarrowdialog.h"
+#include "../newcellhighlightdialog.h"
 
 class PositionEditorWidget : public QWidget
 {
@@ -89,8 +90,17 @@ private:
     QPushButton * _arrowsListOptionsDeleteButton;
     QPushButton * _arrowsListOptionDeleteAllButton;
 
+    QWidget * _highlightsListOptions;
+    QVBoxLayout * _highlightsListOptionsLayout;
+    QLabel * _highlightsListOptionsLabel;
+    QPushButton * _addNewHighlightButton;
+    QListWidget* _highlightsListOptionsMainWidget;
+    QPushButton * _highlightsListOptionsDeleteButton;
+    QPushButton * _highlightsListOptionsDeleteAllButton;
+
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
     loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;
+    loloof64::NewCellHighlightDialog* _newCellHighlightingDialog;
 
     char _editingValue = ' ';
 
