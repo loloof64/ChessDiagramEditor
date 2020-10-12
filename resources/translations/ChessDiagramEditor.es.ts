@@ -938,12 +938,12 @@ b%2
         <translation>Guardar como imagen</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="128"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="130"/>
         <source>Add simple arrow</source>
         <translation>Agrega una flecha simple</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="129"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="131"/>
         <source>Add numbered arrow</source>
         <translation>Agregar una flecha numerada</translation>
     </message>
@@ -993,38 +993,42 @@ b%2
         <translation>Pegar FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="134"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="128"/>
         <source>Arrows</source>
         <translation>Flechas</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="136"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="133"/>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="179"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="174"/>
+        <source>Arrows</source>
+        <comment>Arrows list options of position editor</comment>
+        <translation>Flechas</translation>
+    </message>
+    <message>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="175"/>
         <source>General</source>
         <comment>General options of position editor</comment>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="180"/>
+        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="176"/>
         <source>FEN</source>
         <comment>Fen options of position editor</comment>
         <translation>FEN</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="181"/>
         <source>New element</source>
         <comment>New element options of position editor</comment>
-        <translation>Nuevo objeto</translation>
+        <translation type="vanished">Nuevo objeto</translation>
     </message>
     <message>
-        <location filename="../../gui/position_editor/positioneditorwidget.cpp" line="182"/>
         <source>Elements list</source>
         <comment>Elements list options of position editor</comment>
-        <translation>Lista de objetos</translation>
+        <translation type="vanished">Lista de objetos</translation>
     </message>
 </context>
 <context>

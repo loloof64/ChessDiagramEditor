@@ -79,15 +79,14 @@ private:
     QPushButton * _pasteFenButton;
     loloof64::PositionBuilder * _positionBuilder;
 
-    QWidget * _elementsListOptions;
-    QHBoxLayout * _elementsListOptionsLayout;
-    QVBoxLayout * _elementsListArrowsZoneLayout;
-    QHBoxLayout * _newElementlistArrowsZoneLayout;
+    QWidget * _arrowsListOptions;
+    QVBoxLayout * _arrowsListOptionsLayout;
+    QLabel * _arrowsListOptionsLabel;
+    QHBoxLayout * _newArrowListOptionsButtonsNewLayout;
     QPushButton* _addNewSimpleArrow;
     QPushButton *_addNewNumberedArrow;
-    QLabel * _elementsListArrowsZoneLabel;
-    QWidget * _elementsListArrowsZoneMainWidget;
-    QPushButton * _elementsListArrowsZoneDeleteButton;
+    QWidget * _arrowsListOptionsMainWidget;
+    QPushButton * _arrowsListOptionsDeleteButton;
 
     loloof64::NewHintArrowDialog* _newSimpleHintArrowDialog;
     loloof64::NewHintArrowDialog* _newNumberedHintArrowDialog;

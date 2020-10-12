@@ -34,7 +34,7 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _selectedPieceLine = new QHBoxLayout();
     _selectedPieceLine->setSpacing(10);
 
-    _editorComponent = new loloof64::PositionEditor(30, this);
+    _editorComponent = new loloof64::PositionEditor(42, this);
 
     _trashCanButton = new QPushButton();
     _trashCanButton->setIcon(QIcon(":/icons/trashCan.svg"));
@@ -123,15 +123,14 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _copyFenButton = new QPushButton(tr("Copy FEN"));
     _pasteFenButton = new QPushButton(tr("Paste FEN"));
 
-    _elementsListOptions = new QWidget();
-    _elementsListOptionsLayout = new QHBoxLayout();
-    _elementsListArrowsZoneLayout = new QVBoxLayout();
-    _elementsListArrowsZoneLabel = new QLabel(tr("Arrows"));
-    _newElementlistArrowsZoneLayout = new QHBoxLayout();
+    _arrowsListOptions = new QWidget();
+    _arrowsListOptionsLayout = new QVBoxLayout();
+    _arrowsListOptionsLabel = new QLabel(tr("Arrows"));
+    _newArrowListOptionsButtonsNewLayout = new QHBoxLayout();
     _addNewSimpleArrow = new QPushButton(tr("Add simple arrow"));
     _addNewNumberedArrow = new QPushButton(tr("Add numbered arrow"));
-    _elementsListArrowsZoneMainWidget = new QListWidget();
-    _elementsListArrowsZoneDeleteButton = new QPushButton(tr("Delete"));
+    _arrowsListOptionsMainWidget = new QListWidget();
+    _arrowsListOptionsDeleteButton = new QPushButton(tr("Delete"));
 
 
     _positionBuilder = new loloof64::PositionBuilder();
@@ -141,14 +140,13 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
 
     _mainLayout->addWidget(_saveAsImageButton);
 
-    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneLabel);
-    _newElementlistArrowsZoneLayout->addWidget(_addNewSimpleArrow);
-    _newElementlistArrowsZoneLayout->addWidget(_addNewNumberedArrow);
-    _elementsListArrowsZoneLayout->addLayout(_newElementlistArrowsZoneLayout);
-    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneMainWidget);
-    _elementsListArrowsZoneLayout->addWidget(_elementsListArrowsZoneDeleteButton);
-    _elementsListOptionsLayout->addLayout(_elementsListArrowsZoneLayout);
-    _elementsListOptions->setLayout(_elementsListOptionsLayout);
+    _arrowsListOptionsLayout->addWidget(_arrowsListOptionsLabel);
+    _newArrowListOptionsButtonsNewLayout->addWidget(_addNewSimpleArrow);
+    _newArrowListOptionsButtonsNewLayout->addWidget(_addNewNumberedArrow);
+    _arrowsListOptionsLayout->addLayout(_newArrowListOptionsButtonsNewLayout);
+    _arrowsListOptionsLayout->addWidget(_arrowsListOptionsMainWidget);
+    _arrowsListOptionsLayout->addWidget(_arrowsListOptionsDeleteButton);
+    _arrowsListOptions->setLayout(_arrowsListOptionsLayout);
 
     _fenButtonsLine->addWidget(_copyFenButton);
     _fenButtonsLine->addWidget(_pasteFenButton);
@@ -173,9 +171,9 @@ PositionEditorWidget::PositionEditorWidget(QWidget *parent) : QWidget(parent)
     _generalOptionsLayout->addLayout(_easyModificationButtonsLine);
     _generalOptions->setLayout(_generalOptionsLayout);
 
+    _optionsZone->addTab(_arrowsListOptions, tr("Arrows", "Arrows list options of position editor"));
     _optionsZone->addTab(_generalOptions, tr("General", "General options of position editor"));
     _optionsZone->addTab(_fenOptions, tr("FEN", "Fen options of position editor"));
-    _optionsZone->addTab(_elementsListOptions, tr("Elements list", "Elements list options of position editor"));
 
     _whitePiecesButtonsLine->addWidget(_whitePawnButton);
     _whitePiecesButtonsLine->addWidget(_whiteKnightButton);
@@ -220,15 +218,14 @@ PositionEditorWidget::~PositionEditorWidget() {
 
     delete _positionBuilder;
 
-    delete _elementsListArrowsZoneDeleteButton;
-    delete _elementsListArrowsZoneMainWidget;
+    delete _arrowsListOptionsDeleteButton;
+    delete _arrowsListOptionsMainWidget;
     delete _addNewNumberedArrow;
     delete _addNewSimpleArrow;
-    delete _newElementlistArrowsZoneLayout;
-    delete _elementsListArrowsZoneLabel;
-    delete _elementsListArrowsZoneLayout;
-    delete _elementsListOptionsLayout;
-    delete _elementsListOptions;
+    delete _newArrowListOptionsButtonsNewLayout;
+    delete _arrowsListOptionsLabel;
+    delete _arrowsListOptionsLayout;
+    delete _arrowsListOptions;
 
     delete _pasteFenButton;
     delete _copyFenButton;
