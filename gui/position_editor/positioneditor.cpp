@@ -6,6 +6,7 @@
 #include <QSvgRenderer>
 #include <QInputDialog>
 #include <QFileDialog>
+#include <QMessageBox>
 
 loloof64::PositionEditor::PositionEditor(int cellsSize, QWidget *parent) : QWidget(parent), _cellsSize(cellsSize)
 {
@@ -205,11 +206,16 @@ void loloof64::PositionEditor::letUserSaveToJPG() {
                                            step,
                                            &ok
     );
+
     imageSizePx -= imageSizePx%9;
 
     if (!ok) return;
 
-    auto image = QImage( imageSizePx,  imageSizePx, QImage::Format_ARGB32 );
+    const auto monochromeMode = QMessageBox::question(this, tr("Color mode"),
+                                                      tr("Do you want a grayscale version instead ?")) == QMessageBox::StandardButton::Yes;
+    const auto imageFormat = monochromeMode ? QImage::Format_Grayscale16 : QImage::Format_ARGB32;
+
+    auto image = QImage( imageSizePx,  imageSizePx, imageFormat );
     QPainter painter(&image);
     corePaint(painter, imageSizePx);
 
