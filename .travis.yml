@@ -32,7 +32,7 @@ script:
 - "./linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/*.desktop
   -appimage -verbose=1"
 after_success:
-- mv Chess_Pgn_Reviser*.AppImage ChessDiagramEditor-Linux-x86_64.AppImage
+- mv Chess_Diagram_Editor*.AppImage ChessDiagramEditor-Linux-x86_64.AppImage
 - chmod a+x ChessDiagramEditor-Linux-x86_64.AppImage
 - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
 - bash upload.sh ChessDiagramEditor-Linux-x86_64.AppImage
@@ -43,5 +43,5 @@ deploy:
   file: ChessDiagramEditor-Linux-x86_64.AppImage
   on:
     repo: loloof64/ChessDiagramEditor
-    branch: main
+    tags: true
   skip_cleanup: 'true'
