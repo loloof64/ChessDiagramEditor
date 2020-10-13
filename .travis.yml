@@ -8,7 +8,8 @@ before_install:
 - mkdir -p appdir/usr/bin
 - mkdir -p appdir/usr/translations
 install:
-- sudo apt-get -y install qt59base qt59svg qt59translations qt59tools libgl1-mesa-dev libgtk2.0-dev git
+- sudo apt-get -y install qt59base qt59svg qt59translations qt59tools libgl1-mesa-dev
+  libgtk2.0-dev git
 - source /opt/qt*/bin/qt*-env.sh
 script:
 - lupdate ChessDiagramEditor.pro
@@ -35,11 +36,12 @@ after_success:
 - chmod a+x ChessDiagramEditor-Linux-x86_64.AppImage
 - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
 - bash upload.sh ChessDiagramEditor-Linux-x86_64.AppImage
-
 deploy:
   provider: releases
-  github_token: $GITHUB_TOKEN
+  api_key:
+    secure: 3lbAhIyFe/HWk8uhqk3ogcNDh5E4iM1SnbSypZ+unl+RIXl7DogO1G+Q5+F4lGfrc33lzeYHTPdE/Uj6cZ+C5plxY0++aC1gQF+bMoi7hLCJGapGBwu9x4Y0b8T6ndEq6PqX/a3K4W0NIXj1O5k02KZN39BRzT3UVtF0Ot1hFDVHX2By5kzLgVr+rU29DIlKB0jLQnCUh9E/BMk8gnZLQNyqSzoohzOTDNmWA0/53w3v+FCmr/ToJK5XpFXCfF+HyW/qpzXtw5nNYRt77j/xwj5tfLioK87sZy0rzOKRHhEWiNdUXiq/QrmbMMPPobpP++DYrJhK2aojW7sghmHRPjxRejOs4WfISvFWlVUgFj6U7oEpdRXVInwyQQP3m3dCsSiZXR97Yeh3V1cHDVF/rQMgiNG01Y2pBuepSPsglD/JjUPrJoRii2VVWES/LugZ4Y0sMmgTpWfB7z1o7QEClNju9O6CaL+/A+wem7ylmxF2eqUvP7FTTNB0SptKGo0jMQ3EzQOPZBgN8LxUGZmMngIi7zEx26rArPFtwfgszkksxNqiIu+IDq+KhqDaMshYg0ccZiXhnX8U51QV2rK2mNUXE5cUdkrVEeX9xzJq0psPfzuQms0kInF+VdYiykCNGlDkeidSRuwEuWJKJfmRNBwqAgG6jb4l0Hjx5gkFv1U=
   file: ChessDiagramEditor-Linux-x86_64.AppImage
   on:
-    tags: true
-  skip_cleanup: true
+    repo: loloof64/ChessDiagramEditor
+    branch: main
+  skip_cleanup: 'true'
