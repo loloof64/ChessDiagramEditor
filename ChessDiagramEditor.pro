@@ -228,6 +228,7 @@ DISTFILES += \
     resources/translations/ChessDiagramEditor.es.qm \
     chess.ico \
     .travis.yml \
+    appveyor.yml \
     windows_build.iss
 
 RESOURCES += \

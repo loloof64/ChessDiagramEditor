@@ -1,4 +1,4 @@
-# Chess Diagram Editor 
+# Chess Diagram Editor
 
 Easily create your chess diagrams as JPEG images.
 

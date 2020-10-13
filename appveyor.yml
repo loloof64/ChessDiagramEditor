@@ -17,28 +17,28 @@ install:
   - set PATH=%QTDIR%\bin;C:\Qt\Tools\mingw730_64\bin;"C:\Program Files (x86)\Inno Setup 6";C:\MinGW\bin;%PATH%
   - set CC=C:\Qt\Tools\mingw730_64\bin\gcc.exe
   - set CXX=C:\Qt\Tools\mingw730_64\bin\g++.exe
-  - lupdate ChessPgnReviser.pro
-  - lrelease ChessPgnReviser.pro
+  - lupdate ChessDiagramEditor.pro
+  - lrelease ChessDiagramEditor.pro
 
 build_script:
-  - qmake ChessPgnReviser.pro
+  - qmake ChessDiagramEditor.pro
   - mingw32-make -j4
-  - windeployqt release/chesspgnreviser.exe
+  - windeployqt release/ChessDiagramEditor.exe
   - rm release/*.cpp
   - rm release/*.o
   - dir release
   - iscc windows_build.iss /DPWD=%CD% /OOutput
   - cd Output
-  - copy ChessPgnReviser.exe ChessPgnReviser-windows-x86_64.exe
-  - appveyor PushArtifact ChessPgnReviser-windows-x86_64.exe
+  - copy ChessDiagramEditor.exe ChessDiagramEditor-windows-x86_64.exe
+  - appveyor PushArtifact ChessDiagramEditor-windows-x86_64.exe
 
 artifacts:
-  path: Output\ChessPgnReviser-windows-x86_64.exe
-  name: chesspgnreviser
+  path: Output\ChessDiagramEditor-windows-x86_64.exe
+  name: ChessDiagramEditor
 
 deploy:
-  description: 'ChessPgnReviser'
-  artifact: chesspgnreviser
+  description: 'ChessDiagramEditor'
+  artifact: chessdiagrameditor
   provider: GitHub
   auth_token:
     secure: /ZFMrtWy/BftMA/Bc9tJ9Az3zw+6OriwVIWy0f2F82x/bjsBmVMLdx9y4V2JDsZa
