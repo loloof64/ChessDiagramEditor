@@ -44,7 +44,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   file: ChessDiagramEditor-Linux-x86_64.AppImage
   on:
-    tags: true
     branches:
       only:
         - main
